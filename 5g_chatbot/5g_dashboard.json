@@ -1,0 +1,93 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": null,
+    "title": "5G UERANSIM Network Monitoring",
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "title": "CPU Usage",
+        "type": "graph",
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+            "legendFormat": "{{instance}}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "title": "Memory Usage",
+        "type": "graph",
+        "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
+            "legendFormat": "Memory Used (%)",
+            "refId": "B"
+          }
+        ]
+      },
+      {
+        "title": "Network Traffic",
+        "type": "graph",
+        "gridPos": { "x": 0, "y": 8, "w": 24, "h": 8 },
+        "targets": [
+          {
+            "expr": "rate(node_network_receive_bytes_total[5m])",
+            "legendFormat": "Receive - {{device}}",
+            "refId": "C"
+          },
+          {
+            "expr": "rate(node_network_transmit_bytes_total[5m])",
+            "legendFormat": "Transmit - {{device}}",
+            "refId": "D"
+          }
+        ]
+      },
+      {
+        "title": "gNB & UE Counts (Simulated)",
+        "type": "stat",
+        "gridPos": { "x": 0, "y": 16, "w": 6, "h": 6 },
+        "options": {
+          "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+          "textMode": "value",
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto"
+        },
+        "targets": [
+          {
+            "refId": "E",
+            "expr": "scalar(2)", 
+            "legendFormat": "gNBs"
+          }
+        ]
+      },
+      {
+        "title": "UEs (Simulated)",
+        "type": "stat",
+        "gridPos": { "x": 6, "y": 16, "w": 6, "h": 6 },
+        "options": {
+          "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+          "textMode": "value",
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto"
+        },
+        "targets": [
+          {
+            "refId": "F",
+            "expr": "scalar(10)", 
+            "legendFormat": "UEs"
+          }
+        ]
+      }
+    ]
+  },
+  "overwrite": true
+}
