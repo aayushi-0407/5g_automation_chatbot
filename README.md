@@ -7,7 +7,7 @@
   
 The project titled "Development of an AI-Powered Chatbot for 5G Network Automation" aims to simplify and automate the configuration of 5G network components like gNBs, UEs, and monitoring tools. Using AI and natural language processing, the chatbot will interpret user inputs and generate YAML configuration files, reducing manual effort and errors.The Mistral model used  will further enhance the chatbot’s language understanding capabilities.
 
-Key integrations include OpenAirInterface (OAI), UERANSIM, and Grafana for real-time validation and monitoring.
+Key integrations include Prometheus, HuggingFace Model,  UERANSIM, and Grafana for real-time validation and monitoring.
 
 > "Deploy 2 gNBs and 5 UEs with monitoring."
 
