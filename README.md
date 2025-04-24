@@ -4,7 +4,7 @@
 - Priyanka Dhurvey (202251104)  
 - Tisha Yadav (202251144)  
 - Anjali Lodhi (202252306)
-  
+Video Presentation Link: https://drive.google.com/file/d/1erVVrMgyry-t4bi7yo31BreAH609pkPL/view?usp=sharing
 The project titled "Development of an AI-Powered Chatbot for 5G Network Automation" aims to simplify and automate the configuration of 5G network components like gNBs, UEs, and monitoring tools. Using AI and natural language processing, the chatbot will interpret user inputs and generate YAML configuration files, reducing manual effort and errors.The Mistral model used  will further enhance the chatbot’s language understanding capabilities.
 
 Key integrations include Prometheus, HuggingFace Model,  UERANSIM, and Grafana for real-time validation and monitoring.
